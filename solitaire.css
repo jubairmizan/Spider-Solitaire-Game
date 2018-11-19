@@ -1,0 +1,103 @@
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway','Century Gothic', sans-serif;
+    background-image: linear-gradient(to bottom, #9b4f4f, #703939);
+}
+
+body {
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
+    color: #ccbdbd;
+}
+
+.flipover {
+    animation: flipover 0.5s 1;
+}
+
+.contract {
+    animation: contract 0.5s 1;
+}
+
+.expand {
+    animation: expand 0.5s 1;
+}
+
+.board {
+    min-height: 100%;
+}
+
+.board .inner {
+    width: 800px;
+    max-width: 100%;
+    padding: 20px 0 10px 0;
+    margin: auto;
+}
+
+.board.desktop {
+    padding-top: 65px;
+}
+
+.board.desktop .inner {
+    width: 535px;
+}
+
+.board.desktop .nav-buttons {
+    top: 0;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    z-index: 88888;
+    width: 100%;
+    max-width: 100%;
+}
+
+.board.desktop .nav-buttons .in {
+    width: 510px;
+    max-width: 96%;
+    padding: 10px 2%;
+    margin: auto;
+    position: relative;
+    z-index: 88888;
+}
+
+.board.desktop .nav-buttons .toggle,
+.board.mobile.portrait .nav-buttons .toggle {
+    width: 60px;
+    height: 25px;
+}
+.board.desktop .nav-buttons .toggle label,
+.board.mobile.portrait .nav-buttons .toggle label {
+    height: 25px;
+}
+
+.board.mobile.landscape .nav-buttons .toggle {
+    height: 60px;
+    width: 25px;
+}
+.board.mobile.landscape .nav-buttons .toggle label {
+    height: 60px;
+}
+
+.board.desktop .nav-buttons .in:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.board.desktop .nav-buttons .in button.new,
+.board.mobile.portrait .nav-buttons .in button.new {
+    float: right;
+}
+
+.board.desktop .nav-buttons .in button.back,
+.board.mobile.portrait .nav-buttons .in button.back {
+    float: left;
+    position: static;
+}
+
+.board.desktop .nav-buttons .in button.new,
+.board.mobile.portrait .nav-buttons .in button.new {
+    float: right;
+}
