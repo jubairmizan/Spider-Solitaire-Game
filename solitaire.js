@@ -29,4 +29,65 @@
     var currentGame = {};
     var priorGame = {};
     var hasStarted = false;
+
+    function renderStartBoard() {
+        document.body.innerHTML = '<div id="start-container" class="start-container">'+
+                                        '<h1>Solitaire</h1>'+
+                                        '<button id="startnew">New game</button>'+ 
+                                    '</div>';
+    }
+
+    document.addEventListener('click', function(e) {
+        //e.target.name
+        //e.target.id
+        //e.target.className
+        //e.target.getAttribute('attributeName')
+        if (e.target.id === 'startnew') {
+            startNewGame();
+            return false;
+        }
+    });
+
+    function startNewGame() {
+        cards = [];
+        var game = {
+            stacks: {
+                stack1: [],
+                stack2: [],
+                stack3: [],
+                stack4: [],
+                stack5: [],
+                stack6: [],
+                stack7: [],
+            },
+            refuse: [],
+            closets: {
+                c: [],
+                d: [],
+                h: [],
+                s: []
+            }
+        };
+        for (var s = 0; s < suits.length; s++) {
+            for (var c = 1; c < 14; c++) {
+                cards.push({
+                    suit: suits[s],
+                    num: c
+                });
+            }
+        }
+
+        cards = shuffle(cards);
+    }
+
+    function shuffle(a) {
+        for (let i = a.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [a[i], a[j]] = [a[j], a[i]];
+        }
+        return a;
+    }
+
+
+    renderStartBoard()
 })();
